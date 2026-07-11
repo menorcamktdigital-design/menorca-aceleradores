@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Sora", sans-serif;
+  --color-verde: #0E3B2E;
+  --color-verde2: #155C46;
+  --color-accion: #1FA95E;
+  --color-accionh: #178B4D;
+  --color-papel: #F6F5F0;
+  --color-linea: #E3E1D8;
+}
+
+body { background: var(--color-papel); }
