@@ -10,6 +10,7 @@ export const PROYECTOS = [
   { id: 58, plaza: 'VPM', nombre: 'Villas Punta Mar — Punta Hermosa' },
   { id: 63, plaza: 'Los Pecanos', nombre: 'Los Pecanos 2 — Ica' },
   { id: 30, plaza: 'SAP2', nombre: 'San Antonio de Pachacamac 2' },
+  { id: 57, plaza: 'LDC', nombre: "Lirios de Carabayllo"},
 ]
 
 export const TIPOS = [

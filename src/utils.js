@@ -17,7 +17,12 @@ export async function parsearArchivo(file) {
   const colCel =
     headers.find((h) => /celular|tel[eé]fono|phone|n[uú]mero|m[oó]vil/i.test(h)) || headers[0]
   const colNom =
-    headers.find((h) => /nombre|cliente|name/i.test(h) && h !== colCel) || headers[1] || colCel
+    headers.find((h) => /nombre/i.test(h)) ||
+    headers.find(
+      (h) => /cliente|name/i.test(h) && !/id|documento|dni/i.test(h) && h !== colCel
+    ) ||
+    headers[1] ||
+    colCel
 
   const vistos = new Set()
   const numeros = []
