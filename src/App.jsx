@@ -6,7 +6,7 @@ import ConfirmModal from './components/ConfirmModal'
 
 export default function App() {
   const [bases, setBases] = useState([baseVacia()])
-  const [clave, setClave] = useState('')
+  const [clave, setClave] = useState('menorca-ace-2026')
   const [confirmando, setConfirmando] = useState(false)
   const [enviando, setEnviando] = useState(false)
   const [confirmado, setConfirmado] = useState(false)
