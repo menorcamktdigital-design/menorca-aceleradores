@@ -32,6 +32,7 @@ export const PROYECTOS = [
 export const TIPOS = [
   { value: 'boton', label: 'Con boton(es)' },
   { value: 'default', label: 'Con botón de enlace (URL)' },
+  { value: 'flow', label: 'Flow (Encuesta)' }
 ]
 
 // Estado vacío de una base nueva

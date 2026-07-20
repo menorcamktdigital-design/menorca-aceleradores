@@ -82,7 +82,11 @@ export default function BaseCard({ index, base, onChange, onRemove, bloqueado })
       <div
         role="button"
         tabIndex={0}
-        onClick={() => !bloqueado && inputFile.current.click()}
+        onClick={() => {
+          if (bloqueado) return
+          inputFile.current.value = ''
+          inputFile.current.click()
+        }}
         onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && inputFile.current.click()}
         onDragOver={(e) => {
           e.preventDefault()
@@ -120,7 +124,10 @@ export default function BaseCard({ index, base, onChange, onRemove, bloqueado })
         type="file"
         accept=".xlsx,.xls,.csv"
         className="hidden"
-        onChange={(e) => e.target.files.length && cargarArchivo(e.target.files[0])}
+        onChange={(e) => {
+          if (e.target.files.length) cargarArchivo(e.target.files[0])
+          e.target.value = ''
+        }}
       />
 
       {/* Configuración */}
@@ -151,7 +158,7 @@ export default function BaseCard({ index, base, onChange, onRemove, bloqueado })
           >
             <option value="">— Elegir —</option>
             {PROYECTOS.map((p) => (
-              <option key={p.id} value={p.id}>
+              <option key={p.plaza} value={p.id}>
                 {p.nombre} ({p.id})
               </option>
             ))}
