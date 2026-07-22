@@ -78,7 +78,7 @@ export function armarPayload(base, clave) {
     tipo: base.tipo,
     num_botones: base.tipo === 'default' ? 0 : Number(base.numBotones),
     imagen_url: base.imagenUrl.trim(),
-    payload: 'aceleradores',
+    payload: base.payloadTipo,
     descripcion: base.descripcion.trim(),
     vigencia: base.vigencia.trim(),
     clave,

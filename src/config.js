@@ -35,6 +35,11 @@ export const TIPOS = [
   { value: 'flow', label: 'Flow (Encuesta)' }
 ]
 
+export const PAYLOADS = [
+  { value: 'aceleradores', label: 'Aceleradores' },
+  { value: 'referidos', label: 'Referidos' },
+]
+
 // Estado vacío de una base nueva
 export const baseVacia = () => ({
   id: crypto.randomUUID(),
@@ -48,6 +53,7 @@ export const baseVacia = () => ({
   plaza: '',
   tipo: 'boton',
   numBotones: 1,
+  payloadTipo: 'aceleradores',
   imagenUrl: '',
   descripcion: '',
   vigencia: '',

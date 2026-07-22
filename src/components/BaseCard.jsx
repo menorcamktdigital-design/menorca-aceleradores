@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react'
-import { PROYECTOS, TIPOS } from '../config'
+import { PROYECTOS, TIPOS, PAYLOADS } from '../config'
 import { parsearArchivo, validarBase } from '../utils'
 
 const inputCls =
@@ -64,7 +64,7 @@ export default function BaseCard({ index, base, onChange, onRemove, bloqueado })
           {index + 1}
         </div>
         <h2 className="font-display text-[15px] font-semibold flex-1 truncate">
-          {base.template || `Acelerador ${index + 1}`}
+          {base.template || `${base.payloadTipo === 'referidos' ? 'Referido' : 'Acelerador'} ${index + 1}`}
         </h2>
         {badge}
         {!bloqueado && (
@@ -187,6 +187,20 @@ export default function BaseCard({ index, base, onChange, onRemove, bloqueado })
             />
           </Campo>
         )}
+        <Campo label="Tipo de envio" hint="determina a donde cae la respuesta">
+          <select
+            className={inputCls}
+            disabled={bloqueado}
+            value={base.payloadTipo}
+            onChange={(e) => set({ payloadTipo: e.target.value })}
+          >
+            {PAYLOADS.map((p) => (
+              <option key={p.value} value={p.value}>
+                {p.label}
+              </option>
+            ))}
+          </select>
+        </Campo>
         <Campo label="Tipo de plantilla">
           <select
             className={inputCls}
